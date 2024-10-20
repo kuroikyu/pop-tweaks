@@ -2,7 +2,7 @@
 
 # Function to get the default sink number
 get_default_sink() {
-  wpctl status | grep -m 1 -A 4 'Sinks' | grep 'Scarlett Solo (3rd Gen.) Analog Stereo' | awk '{print $2}' | cut -d'.' -f1 | head -n 1
+  wpctl status | grep -m 1 -A 4 'Sinks' | tr '*' ' ' | grep 'Scarlett Solo (3rd Gen.) Analog Stereo' | awk '{print $2}' | cut -d'.' -f1 | head -n 1
 }
 
 # Get the default sink number

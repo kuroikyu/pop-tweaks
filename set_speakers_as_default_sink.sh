@@ -2,7 +2,7 @@
 
 # Function to get the default sink number
 get_default_sink() {
-  wpctl status | grep -m 1 -A 4 'Sinks' | grep 'PCM2704 16-bit stereo audio DAC Analog Stereo' | awk '{print $2}' | cut -d'.' -f1 | head -n 1 
+  wpctl status | grep -m 1 -A 4 'Sinks' | tr '*' ' ' | grep 'PCM2704 16-bit stereo audio DAC Analog Stereo' | awk '{print $2}' | cut -d'.' -f1 | head -n 1 
 }
 
 # Get the default sink number
